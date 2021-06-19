@@ -1,8 +1,10 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BulletControl
     - CameraControl
     - GameManager
+    - GunStatus
     - NetworkManager
     - PlayerControl
     PhotonUnityNetworking.Demos.dll:
@@ -115,23 +117,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3388}
     - Class: 114
+      Script: {instanceID: 3462}
+    - Class: 114
       Script: {instanceID: 3470}
     - Class: 114
-      Script: {instanceID: 3588}
+      Script: {instanceID: 3590}
     - Class: 114
-      Script: {instanceID: 3752}
+      Script: {instanceID: 3754}
     - Class: 114
-      Script: {instanceID: 3766}
+      Script: {instanceID: 3768}
     - Class: 114
-      Script: {instanceID: 3792}
+      Script: {instanceID: 3794}
     - Class: 114
-      Script: {instanceID: 3888}
+      Script: {instanceID: 3890}
     - Class: 114
-      Script: {instanceID: 3920}
+      Script: {instanceID: 3922}
     - Class: 114
-      Script: {instanceID: 4070}
+      Script: {instanceID: 4072}
     - Class: 114
-      Script: {instanceID: 21150}
+      Script: {instanceID: 18700}
+    - Class: 114
+      Script: {instanceID: 18706}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -196,7 +202,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3290}
     - Class: 114
-      Script: {instanceID: 3752}
+      Script: {instanceID: 3754}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -1166,7 +1172,7 @@ ScriptsOnlyBuild:
     className: LobbyTopPanel
   - hash:
       serializedVersion: 2
-      Hash: 3ed67a0aa02597502408bd8987b7281f
+      Hash: 3be702abec47ee382d179b429254b872
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraControl
@@ -1248,6 +1254,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SelectionCaret
+  - hash:
+      serializedVersion: 2
+      Hash: 46cfd12c06e0f7aee971a1c1be06a98a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerControl
   - hash:
       serializedVersion: 2
       Hash: a306e12d896ddcca949923c805691027
@@ -1550,10 +1562,16 @@ ScriptsOnlyBuild:
     className: UserIdUiForm
   - hash:
       serializedVersion: 2
-      Hash: 37f5bf9e53dc2587df8999ca6cd47fef
+      Hash: d38b1b8104f0a9a41e23d4bab420a6d7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PlayerControl
+    className: GunStatus
+  - hash:
+      serializedVersion: 2
+      Hash: d33c09506802e00eb076a459602be63e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BulletControl
   platform: 5
   scenePathNames:
   - Assets/MainScene.unity

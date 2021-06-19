@@ -21,7 +21,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     void Update()
     {
         StatusText.text = PhotonNetwork.NetworkClientState.ToString();
-
      /*
         //랜덤참가 실패시 방 생성
         if (isPressed == true)

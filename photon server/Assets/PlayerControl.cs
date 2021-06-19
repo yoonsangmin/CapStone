@@ -10,11 +10,13 @@ public class PlayerControl : MonoBehaviour
     private PhotonView PV = null;
     private GameManager GM = null;
     private Camera camera = null;
+    private GunStatus gun_status = null;
 
     public float MOVE_SPEED = 7.0f; // 이동 속도.
     public float DASH_SPEED = 12.0f; // 대쉬 속도.
     public float dash_time = 0.5f; // 대쉬 타임
     public float dash_cool_time = 0.5f; // 대쉬 쿨 타임
+
 
     private struct Key
     { // 키 조작 정보 구조체.
@@ -53,12 +55,18 @@ public class PlayerControl : MonoBehaviour
     public float step_timer = 0.0f; // 대쉬 타이머.
     public float dash_cool_timer = 0.0f; // 대쉬 쿨 타이머.
 
+    public float shoot_cool_time = 0.2f; // 발사 쿨 타임
+    public float shoot_timer = 0.0f; // 발사 타이머.
+
+    // 아이템 관련 - 나중에 클래스 빼기
+    public int bullet1 = 100;
 
     void Start()
     {
-        camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        PV = GetComponent<PhotonView>();
-        GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        this.gun_status = GetComponentInChildren<GunStatus>();
+        this.camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        this.PV = GetComponent<PhotonView>();
+        this.GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
         this.step = STEP.NONE; // 현 단계 상태를 초기화.
         this.next_step = STEP.MOVE; // 다음 단계 상태를 초기화.
@@ -67,13 +75,13 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        if(PV.IsMine && GM.isPlaying)
+        if(PV.IsMine) // && GM.isPlaying)
         {
             this.get_input(); // 입력 정보 취득.
 
             this.step_timer += Time.deltaTime;
             this.dash_cool_timer += Time.deltaTime;
-            //this.shoot_timer += Time.deltaTime;
+            this.shoot_timer += Time.deltaTime;
 
             // 상태를 변화시킨다---------------------.
             if (this.next_step == STEP.NONE)
@@ -128,12 +136,12 @@ public class PlayerControl : MonoBehaviour
                     this.move_control();
                     this.lookCamera();
 
-                    /*
+                    
                     if (this.key.shoot)
                         this.gun_status.shoot_bullet();
                     if (this.key.reload)
                         this.gun_status.reload_bullet();
-                    */
+                    
                     break;
                 case STEP.DASH:
                     // 달리기를 한다
@@ -161,7 +169,7 @@ public class PlayerControl : MonoBehaviour
         // R 키가 눌렸으면 true를 대입.
         this.key.reload = Input.GetKey(KeyCode.R);
 
-        /*
+        
         // 마우스 왼쪽 키가 눌렸으면 true를 대입. 딜레이 만들어야 함
         this.afore_key.shoot |= Input.GetKeyDown(KeyCode.Mouse0);
         this.key.shoot = false;
@@ -171,7 +179,6 @@ public class PlayerControl : MonoBehaviour
             this.key.shoot = this.afore_key.shoot;
             this.afore_key.shoot = false;
         }
-        */
     }
 
     // 키 입력에 따라 실제로 이동시키는 처리를 한다.

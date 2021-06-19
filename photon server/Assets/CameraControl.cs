@@ -9,7 +9,6 @@ public class CameraControl : MonoBehaviour
     public GameObject playerObject;
 
     public Vector3 offsetPosition;
-    public Vector3 offsetRotation;
 
     void Update()
     {
@@ -28,7 +27,9 @@ public class CameraControl : MonoBehaviour
             if (GameObject.FindWithTag("Player").GetComponent<PhotonView>().IsMine)
             {
                 playerObject = GameObject.FindWithTag("Player");
-                this.transform.rotation = Quaternion.Euler(playerObject.transform.rotation.eulerAngles + offsetRotation);
+                
+                this.transform.position = playerObject.transform.position + offsetPosition;
+                this.transform.LookAt(playerObject.transform);
             }
         }
     }
