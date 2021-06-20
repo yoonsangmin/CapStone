@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour
     private GameManager GM = null;
     private Camera camera = null;
     private GunStatus gun_status = null;
+    private Animator animator = null;
 
     public float MOVE_SPEED = 7.0f; // 이동 속도.
     public float DASH_SPEED = 12.0f; // 대쉬 속도.
@@ -67,6 +68,7 @@ public class PlayerControl : MonoBehaviour
         this.camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         this.PV = GetComponent<PhotonView>();
         this.GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        this.animator = transform.GetComponentInChildren<Animator>();
 
         this.step = STEP.NONE; // 현 단계 상태를 초기화.
         this.next_step = STEP.MOVE; // 다음 단계 상태를 초기화.
@@ -75,7 +77,7 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        if(PV.IsMine) // && GM.isPlaying)
+        if(PV.IsMine && GM.isPlaying)
         {
             this.get_input(); // 입력 정보 취득.
 
@@ -138,7 +140,10 @@ public class PlayerControl : MonoBehaviour
 
                     
                     if (this.key.shoot)
+                    {
                         this.gun_status.shoot_bullet();
+                        this.animator.SetTrigger("IsShooting");
+                    }
                     if (this.key.reload)
                         this.gun_status.reload_bullet();
                     
@@ -150,6 +155,12 @@ public class PlayerControl : MonoBehaviour
                     this.transform.position += move_vector; // 위치를 이동.
                     break;
             }
+
+
+            if(Vector3.Distance(move_vector, Vector3.zero) > 0.01f)
+                this.animator.SetBool("IsMoving", true);
+            else
+                this.animator.SetBool("IsMoving", false);
         }
     }
 

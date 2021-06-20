@@ -9,8 +9,10 @@ using UnityEngine.UI;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    public Text StatusText;
+    public Text StatusText, NickNameText;
     public InputField roomInput, NickNameInput;
+    public Button serverConnetButton;
+    public GameObject nameSetPanel;
 
     private byte maxPlayer = 2;
     List<RoomInfo> roomInfos = null;
@@ -21,6 +23,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     void Update()
     {
         StatusText.text = PhotonNetwork.NetworkClientState.ToString();
+
+        if (NickNameInput.text == "")
+            serverConnetButton.interactable = false;
+        else
+            serverConnetButton.interactable = true;
      /*
         //랜덤참가 실패시 방 생성
         if (isPressed == true)
@@ -42,6 +49,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         print("서버접속완료");
         PhotonNetwork.LocalPlayer.NickName = NickNameInput.text;
+        nameSetPanel.SetActive(false);
+
+        NickNameText.text = PhotonNetwork.LocalPlayer.NickName + "님 환영합니다";
     }
 
     public void Disconnect() => PhotonNetwork.Disconnect();
@@ -75,7 +85,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom() 
     { 
         print("방참가완료");
-        PhotonNetwork.LoadLevel("TestScene");
+        PhotonNetwork.LoadLevel("DesertVillage");
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message) => print("방만들기실패");

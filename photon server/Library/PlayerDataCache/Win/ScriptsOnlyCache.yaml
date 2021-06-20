@@ -97,47 +97,47 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1998}
     - Class: 114
-      Script: {instanceID: 2482}
+      Script: {instanceID: 2448}
     - Class: 114
-      Script: {instanceID: 2490}
+      Script: {instanceID: 2484}
     - Class: 114
-      Script: {instanceID: 2524}
+      Script: {instanceID: 2492}
     - Class: 114
-      Script: {instanceID: 2592}
+      Script: {instanceID: 2526}
     - Class: 114
-      Script: {instanceID: 2748}
+      Script: {instanceID: 2594}
     - Class: 114
-      Script: {instanceID: 2814}
+      Script: {instanceID: 2750}
     - Class: 114
-      Script: {instanceID: 2920}
+      Script: {instanceID: 2816}
     - Class: 114
-      Script: {instanceID: 3134}
+      Script: {instanceID: 2858}
     - Class: 114
-      Script: {instanceID: 3364}
+      Script: {instanceID: 2924}
     - Class: 114
-      Script: {instanceID: 3388}
+      Script: {instanceID: 3138}
     - Class: 114
-      Script: {instanceID: 3462}
+      Script: {instanceID: 3368}
     - Class: 114
-      Script: {instanceID: 3470}
+      Script: {instanceID: 3392}
     - Class: 114
-      Script: {instanceID: 3590}
+      Script: {instanceID: 3466}
     - Class: 114
-      Script: {instanceID: 3754}
+      Script: {instanceID: 3474}
     - Class: 114
-      Script: {instanceID: 3768}
+      Script: {instanceID: 3594}
     - Class: 114
-      Script: {instanceID: 3794}
+      Script: {instanceID: 3758}
     - Class: 114
-      Script: {instanceID: 3890}
+      Script: {instanceID: 3772}
     - Class: 114
-      Script: {instanceID: 3922}
+      Script: {instanceID: 3798}
     - Class: 114
-      Script: {instanceID: 4072}
+      Script: {instanceID: 3894}
     - Class: 114
-      Script: {instanceID: 18700}
+      Script: {instanceID: 3926}
     - Class: 114
-      Script: {instanceID: 18706}
+      Script: {instanceID: 4076}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -167,6 +167,51 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 225
+      Script: {instanceID: 0}
+    Assets/Tarbo-DesertVillage/Demo/DesertVillage.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 2980}
+    - Class: 114
+      Script: {instanceID: 3294}
+    - Class: 114
+      Script: {instanceID: 3758}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    - Class: 850595691
       Script: {instanceID: 0}
     Assets/TestScene.unity:
     - Class: 1
@@ -198,11 +243,11 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2976}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 3290}
+      Script: {instanceID: 3294}
     - Class: 114
-      Script: {instanceID: 3754}
+      Script: {instanceID: 3758}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -740,6 +785,12 @@ ScriptsOnlyBuild:
     className: FriendItem
   - hash:
       serializedVersion: 2
+      Hash: d33c09506802e00eb076a459602be63e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BulletControl
+  - hash:
+      serializedVersion: 2
       Hash: f1d735cc1a21c3704ab52568f4fbfcf8
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner
@@ -978,6 +1029,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NamePickGui
+  - hash:
+      serializedVersion: 2
+      Hash: d38b1b8104f0a9a41e23d4bab420a6d7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GunStatus
   - hash:
       serializedVersion: 2
       Hash: 040dd48e3a027d5424519a5fa2009df4
@@ -1460,7 +1517,7 @@ ScriptsOnlyBuild:
     className: PlayerNameInputField
   - hash:
       serializedVersion: 2
-      Hash: cbe1ab6cca2674be7a070105b5e8f8eb
+      Hash: 1fb712c170f333c71340d22458a9c621
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager
@@ -1562,18 +1619,37 @@ ScriptsOnlyBuild:
     className: UserIdUiForm
   - hash:
       serializedVersion: 2
-      Hash: d38b1b8104f0a9a41e23d4bab420a6d7
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GunStatus
+    className: SliderValuePass
   - hash:
       serializedVersion: 2
-      Hash: d33c09506802e00eb076a459602be63e
+      Hash: 9b4777ff30def423d27918d2bcda5129
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: BulletControl
+    className: SliderRunTo1
+  - hash:
+      serializedVersion: 2
+      Hash: 77c6c5625ae140cf0aaaf0d2ac9675f5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CircleSlider
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PressedBtn
+  - hash:
+      serializedVersion: 2
+      Hash: d62301e643e4d37f0cd0c820a8cede5f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: JustRotate
   platform: 5
   scenePathNames:
   - Assets/MainScene.unity
   - Assets/TestScene.unity
-  playerPath: "C:/Users/User/Desktop/\uD14C\uC2A4\uD2B8\uBE4C\uB4DC/photon server.exe"
+  - Assets/Tarbo-DesertVillage/Demo/DesertVillage.unity
+  playerPath: "C:/Users/Acer/Desktop/Western GangFight \uBE4C\uB4DC/photon server.exe"

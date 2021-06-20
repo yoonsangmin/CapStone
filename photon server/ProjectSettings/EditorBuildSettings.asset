@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/TestScene.unity
     guid: ee9d6cdc3c3a1994986347a75909f6f9
+  - enabled: 1
+    path: Assets/Tarbo-DesertVillage/Demo/DesertVillage.unity
+    guid: a9775a2831aeff2448c726d2f5b7f693
   m_configObjects: {}
